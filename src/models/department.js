@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   department.init(
     {
+      name: DataTypes.STRING,
       address: DataTypes.STRING,
       description: DataTypes.BOOLEAN,
       image: DataTypes.STRING,
