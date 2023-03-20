@@ -1,5 +1,6 @@
 import express from "express";
 import { where } from "sequelize";
+import UserController from "../Controllers/UserController";
 import homeCotroller from "../Controllers/homeController";
 let router = express.Router();
 let initWebRoutes = (app) => {
@@ -12,6 +13,7 @@ let initWebRoutes = (app) => {
   router.get("/delete-crud", homeCotroller.deleteCRUD);
   //rest api
   //rest api
+  router.post("/api/login", UserController.handleLogin);
   return app.use("/", router);
 };
 module.exports = initWebRoutes;
