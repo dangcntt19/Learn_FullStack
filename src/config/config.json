@@ -5,10 +5,12 @@
     "database": "tuvantuyensinh",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    
-    "loging": false
- 
-    
+    "loging": false,
+    "query":{
+      "raw":true
+    },
+    "timezone": "+07:00"
+
   },
   "test": {
     "username": "root",
