@@ -7,24 +7,6 @@ import connectDB from "./config/connectDB";
 
 require("dotenv").config();
 let app = express();
-// const express = require("express");
-// const cors = require("cors");
-
-// const app = express();
-
-// const corsMiddleware = cors({
-//   origin: "*",
-//   credentials: true,
-// });
-
-// app.use(corsMiddleware);
-//const app = express();
-
-// app.use(
-//   cors({
-//     origin: "*",
-//   })
-// );
 
 app.use(
   cors({
