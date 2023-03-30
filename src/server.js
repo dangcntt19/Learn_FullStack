@@ -8,14 +8,14 @@ import connectDB from "./config/connectDB";
 require("dotenv").config();
 let app = express();
 
-app.use(
-  cors({
-    origin: ["http://localhost:3000", "http://172.17.169.49:3000"],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: [p],
+//     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+//     allowedHeaders: ["Content-Type", "Authorization"],
+//     credentials: true,
+//   })
+// );
 // const allowedOrigins = ["http://localhost:3000", "http://localhost:4000"];
 // app.use(function (req, res, next) {
 //   const origin = req.headers.origin;
@@ -29,17 +29,17 @@ app.use(
 //   );
 //   next();
 // });
-// app.use(function (req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "null");
-//   res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS");
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept, Authorization, Access-Control-Allow-Credentials"
-//   );
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", process.env.URL_REACT);
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization, Access-Control-Allow-Credentials"
+  );
 
-//   res.header("Access-Control-Allow-Credentials", "true"); // Đặt giá trị này thành true
-//   next();
-// });
+  res.header("Access-Control-Allow-Credentials", "true"); // Đặt giá trị này thành true
+  next();
+});
 
 // app.use(function (req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "*");
